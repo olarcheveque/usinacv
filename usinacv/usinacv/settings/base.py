@@ -132,6 +132,8 @@ TEMPLATE_CONTEXT_PROCESSORS = (
     'django.core.context_processors.tz',
     'django.contrib.messages.context_processors.messages',
     'django.core.context_processors.request',
+    'cms.context_processors.media',
+    'sekizai.context_processors.sekizai',
 )
 
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#template-loaders
@@ -156,6 +158,12 @@ MIDDLEWARE_CLASSES = (
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
+    'django.middleware.locale.LocaleMiddleware',
+    'django.middleware.doc.XViewMiddleware',
+    'django.middleware.common.CommonMiddleware',
+    'cms.middleware.page.CurrentPageMiddleware',
+    'cms.middleware.user.CurrentUserMiddleware',
+    'cms.middleware.toolbar.ToolbarMiddleware',
 )
 ########## END MIDDLEWARE CONFIGURATION
 
@@ -187,6 +195,12 @@ DJANGO_APPS = (
 THIRD_PARTY_APPS = (
     # Database migration helpers:
     'south',
+
+    # Django CMS
+    'cms',
+    'mptt',
+    'menus',
+    'sekizai',
 )
 
 # Apps specific for this project go here.
@@ -235,3 +249,9 @@ LOGGING = {
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#wsgi-application
 WSGI_APPLICATION = 'wsgi.application'
 ########## END WSGI CONFIGURATION
+
+LANGUAGES = [
+    ('fr', 'French'),
+    ('en', 'English'),
+    ]
+
