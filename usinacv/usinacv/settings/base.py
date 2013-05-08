@@ -164,6 +164,7 @@ MIDDLEWARE_CLASSES = (
     'cms.middleware.page.CurrentPageMiddleware',
     'cms.middleware.user.CurrentUserMiddleware',
     'cms.middleware.toolbar.ToolbarMiddleware',
+    'cms.middleware.language.LanguageCookieMiddleware',
 )
 ########## END MIDDLEWARE CONFIGURATION
 
@@ -201,6 +202,9 @@ THIRD_PARTY_APPS = (
     'mptt',
     'menus',
     'sekizai',
+
+    # Plugin Django CMS
+    'cms.plugins.text',
 )
 
 # Apps specific for this project go here.
@@ -250,8 +254,14 @@ LOGGING = {
 WSGI_APPLICATION = 'wsgi.application'
 ########## END WSGI CONFIGURATION
 
+######### DJANGO CMS
 LANGUAGES = [
     ('fr', 'French'),
     ('en', 'English'),
     ]
+
+CMS_TEMPLATES = (
+    ('layouts/classic.html', 'Classic'),
+    )
+######### END DJANGO CMS
 
