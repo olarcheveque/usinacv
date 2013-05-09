@@ -1,11 +1,12 @@
+{% load sekizai_tags %}
 <!DOCTYPE html>
-<html lang="en">
+<html>
   <head>
     <meta charset="utf-8">
     <title>{% block title %}usinacv{% endblock title %}</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
-    <meta name="author" content="">
+    <meta name="author" content="Olivier Larchevêque">
 
     <!-- Le styles -->
     <link href="{{ STATIC_URL }}css/bootstrap.min.css" rel="stylesheet">
@@ -23,6 +24,9 @@
 
     <!-- This file store project specific CSS -->
     <link href="{{ STATIC_URL }}css/project.css" rel="stylesheet">
+
+    
+    {% render_block "css" %}
 
     <!-- Use this to quickly test CSS changes in a template, 
         then move to project.css -->
@@ -53,8 +57,6 @@
 
     <div class="container">
 
-      <h1>{% block page_title %}Example Base Template{% endblock page_title %}</h1>
-
       {% block content %}
         <p>Use this document as a way to quick start any new project.</p>
       {% endblock content %}
@@ -70,6 +72,7 @@
     <!-- place project specific Javascript in this file -->
     <script src="{{ STATIC_URL }}js/project.js"></script>
 
+    {% render_block "js" %}
     {% block extra_js %}{% endblock extra_js %}
   </body>
 </html>

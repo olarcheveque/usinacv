@@ -205,10 +205,13 @@ THIRD_PARTY_APPS = (
 
     # Plugin Django CMS
     'cms.plugins.text',
+
+    'django_countries',
 )
 
 # Apps specific for this project go here.
 LOCAL_APPS = (
+    'resume',
 )
 
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#installed-apps

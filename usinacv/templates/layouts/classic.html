@@ -1,20 +1,9 @@
-<!DOCTYPE html>
-{% load cms_tags sekizai_tags %}
-<html>
-  <head>
-      {% render_block "css" %}
-  </head>
-  <body>
-      {% cms_toolbar %}
+{% extends "base.html" %}
+{% load cms_tags %}
 
-      <div class="you">
-        {% placeholder you %}
-      </div>
-
-      <div class="resume">
-        {% placeholder resume %}
-      </div>
-      
-      {% render_block "js" %}
-  </body>
-</html>
+{% block content %}
+    {% cms_toolbar %}
+    <div class="column-center">
+      {% placeholder "column-center" %}
+    </div>
+{% endblock content %}

@@ -1,0 +1,33 @@
+<div class="identity">
+
+  <h1>{{ instance.first_name }} {{ instance.last_name }}</h1>
+  
+  <div>
+      <img src="{{ instance.country.flag }}"
+      alt="{{ instance.country.code }}" />
+      {{ instance.city }}
+  </div>    
+  
+  {% if instance.email %}
+  <div>
+      <i class="icon-envelope"></i>
+      <span>{{ instance.email }}</span>
+  </div>    
+  {% endif %}
+  
+  {% if instance.phone %}
+  <div>
+      <i class="icon-bell"></i>
+      <span>{{ instance.phone }}</span>
+  </div>    
+  {% endif %}
+  
+  {% if instance.job_title %}
+      <h4>{{ instance.job_title }}</h4>
+  {% endif %}
+  
+  {% if instance.description %}
+      <p class="description">{{ instance.description }}</p>
+  {% endif %}
+
+</div>
