@@ -1,6 +1,10 @@
 <div class="identity">
 
   <h1>{{ instance.first_name }} {{ instance.last_name }}</h1>
+
+  {% if instance.job_title %}
+      <h2>{{ instance.job_title }}</h2>
+  {% endif %}
   
   <div>
       <img src="{{ instance.country.flag }}"
@@ -10,20 +14,14 @@
   
   {% if instance.email %}
   <div>
-      <i class="icon-envelope"></i>
       <span>{{ instance.email }}</span>
   </div>    
   {% endif %}
   
   {% if instance.phone %}
   <div>
-      <i class="icon-bell"></i>
       <span>{{ instance.phone }}</span>
   </div>    
-  {% endif %}
-  
-  {% if instance.job_title %}
-      <h4>{{ instance.job_title }}</h4>
   {% endif %}
   
   {% if instance.description %}

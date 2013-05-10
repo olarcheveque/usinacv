@@ -203,9 +203,6 @@ THIRD_PARTY_APPS = (
     'menus',
     'sekizai',
 
-    # Plugin Django CMS
-    'cms.plugins.text',
-
     'django_countries',
 )
 

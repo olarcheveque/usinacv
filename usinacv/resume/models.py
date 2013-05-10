@@ -43,6 +43,7 @@ class IdentityPlugin(CMSPlugin):
 
     description = models.TextField(
             verbose_name=_('Description'),
+            help_text=_('use Markdown syntax'),
             blank=True,)
 
     def __unicode__(self):
@@ -99,6 +100,28 @@ class JobPlugin(CMSPlugin):
             max_length=255,
             blank=True)
 
+    def __unicode__(self):
+        return u" %s (%s)" % (self.company_name, self.date_start, )
+
+
+class ProjectPlugin(CMSPlugin):
+    """
+    Plugin to store project.
+    """
+
+    title = models.CharField(
+            verbose_name=_('Title'),
+            max_length=100)
+
+    description = models.TextField(
+            verbose_name=_('Description'),
+            help_text=_('use Markdown syntax'))
+
+    job = models.ForeignKey('JobPlugin',
+            verbose_name=_('Job'),
+            related_name='project_plugins',
+            null=True)
+
 
 class EducationPlugin(CMSPlugin):
     """
@@ -118,8 +141,18 @@ class EducationPlugin(CMSPlugin):
 
     diploma_description = models.TextField(
             verbose_name=_('Diploma Description'),
+            help_text=_('use Markdown syntax'),
             blank=True)
 
     university = models.CharField(
             verbose_name=_('University'),
             max_length=255)
+
+
+class TitlePlugin(CMSPlugin):
+    """
+    Plugin to store title (as a legend for others plugins).
+    """
+    title = models.CharField(
+            verbose_name=_('Title'),
+            max_length=100)

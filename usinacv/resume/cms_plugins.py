@@ -8,7 +8,9 @@ from cms.plugin_pool import plugin_pool
 from .models import IdentityPlugin as IdentityPluginModel
 from .models import SocialPlugin as SocialPluginModel
 from .models import JobPlugin as JobPluginModel
+from .models import ProjectPlugin as ProjectPluginModel
 from .models import EducationPlugin as EducationPluginModel
+from .models import TitlePlugin as TitlePluginModel
 
 
 class IdentityPlugin(CMSPluginBase):
@@ -45,7 +47,7 @@ class JobPlugin(CMSPluginBase):
     """
     Django CMS plugin for job model.
     """
-    model = SocialPluginModel
+    model = JobPluginModel
     name = _("Job Plugin")
     render_template = "resume/job_plugin.html"
 
@@ -56,11 +58,26 @@ class JobPlugin(CMSPluginBase):
 plugin_pool.register_plugin(JobPlugin)
 
 
+class ProjectPlugin(CMSPluginBase):
+    """
+    Django CMS plugin for project model.
+    """
+    model = ProjectPluginModel
+    name = _("Project Plugin")
+    render_template = "resume/project_plugin.html"
+
+    def render(self, context, instance, placeholder):
+        context.update({'instance': instance})
+        return context
+
+plugin_pool.register_plugin(ProjectPlugin)
+
+
 class EducationPlugin(CMSPluginBase):
     """
     Django CMS plugin for education model.
     """
-    model = SocialPluginModel
+    model = EducationPluginModel
     name = _("Education Plugin")
     render_template = "resume/education_plugin.html"
 
@@ -69,3 +86,18 @@ class EducationPlugin(CMSPluginBase):
         return context
 
 plugin_pool.register_plugin(EducationPlugin)
+
+
+class TitlePlugin(CMSPluginBase):
+    """
+    Django CMS plugin for title model.
+    """
+    model = TitlePluginModel
+    name = _("Title Plugin")
+    render_template = "resume/title_plugin.html"
+
+    def render(self, context, instance, placeholder):
+        context.update({'instance': instance})
+        return context
+
+plugin_pool.register_plugin(TitlePlugin)

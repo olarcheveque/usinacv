@@ -1,0 +1,13 @@
+<div class="job">
+    <div class="dates">
+        <span>{{ instance.date_start|date:"m/Y" }}</span>
+        {% if instance.date_end %}
+            - <span>{{ instance.date_end|date:"m/Y" }}</span>
+        {% endif %}
+    </div>
+    <h3>{{ instance.company_name }}</h3>
+    <h4>{{ instance.job_title }}</h4>
+    {% if instance.job_description %}
+      <p class="description">{{ instance.job_description }}</p>
+    {% endif %}
+</div>

@@ -1,0 +1,13 @@
+<div class="education">
+    <div class="dates">
+        <span>{{ instance.date_start|date:"m/Y" }}</span>
+        {% if instance.date_end %}
+            - <span>{{ instance.date_end|date:"m/Y" }}</span>
+        {% endif %}
+    </div>
+    <h3>{{ instance.diploma_title }}</h3>
+    <h4>{{ instance.university }}</h4>
+    {% if instance.diploma_description %}
+      <p class="description">{{ instance.diploma_description }}</p>
+    {% endif %}
+</div>
