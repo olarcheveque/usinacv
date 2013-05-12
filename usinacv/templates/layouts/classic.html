@@ -1,6 +1,13 @@
 {% extends "base.html" %}
 {% load cms_tags %}
 
+{% block boostrap_css %}
+    <link href="{{ STATIC_URL }}css/classic/bootstrap.min.css"
+          rel="stylesheet">
+    <link href="{{ STATIC_URL }}css/classic/project.css"
+          rel="stylesheet">
+{% endblock boostrap_css %}
+
 {% block content %}
     {% cms_toolbar %}
     <div class="column-center">

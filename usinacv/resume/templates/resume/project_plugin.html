@@ -1,6 +1,3 @@
-<div class="project">
-    <h3>{{ instance.title }}</h3>
-    {% if instance.description %}
-      <p class="description">{{ instance.description }}</p>
-    {% endif %}
+<div class="row project">
+    {% include "resume/dated_event.html" with title=instance.title description=instance.description %}
 </div>

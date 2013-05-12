@@ -1,31 +1,31 @@
-<div class="identity">
+{% load i18n %}
 
-  <h1>{{ instance.first_name }} {{ instance.last_name }}</h1>
+<header id="overview" class="identity jumbotron subhead">
+  <div class="row">
+    <div class="span8">
+        <h1>{{ instance.first_name }} {{ instance.last_name }}</h1>
+        {% if instance.job_title %}
+        <h1><small>{{ instance.job_title }}</small></h1>
+        {% endif %}
+        {% if instance.description %}
+          <p class="lead">{{ instance.description }}</p>
+        {% endif %}
 
-  {% if instance.job_title %}
-      <h2>{{ instance.job_title }}</h2>
-  {% endif %}
-  
-  <div>
-      <img src="{{ instance.country.flag }}"
-      alt="{{ instance.country.code }}" />
-      {{ instance.city }}
-  </div>    
-  
-  {% if instance.email %}
-  <div>
-      <span>{{ instance.email }}</span>
-  </div>    
-  {% endif %}
-  
-  {% if instance.phone %}
-  <div>
-      <span>{{ instance.phone }}</span>
-  </div>    
-  {% endif %}
-  
-  {% if instance.description %}
-      <p class="description">{{ instance.description }}</p>
-  {% endif %}
+    </div>
 
-</div>
+    <div class="span4">
+      <div class="well">
+      <div><strong>{% trans "Contact" %}</strong></div>
+      {% if instance.email %} {{ instance.email }} <br />{% endif %}
+      <img class="flag"
+             src="{{ instance.country.flag }}"
+             alt="{{ instance.country.code }}" />
+      {{ instance.city }}<br />
+      {% if instance.phone %} {{ instance.phone }} <br />{% endif %}
+    </div>
+    </div>
+  </div>
+
+  </div>
+</header>
+

@@ -1,31 +1,43 @@
-{% load sekizai_tags %}
+{% load sekizai_tags cms_tags menu_tags %}
 <!DOCTYPE html>
 <html>
   <head>
     <meta charset="utf-8">
-    <title>{% block title %}usinacv{% endblock title %}</title>
+    <title>
+        {% block title %}
+        {% page_attribute "page_title" request.current_page.parent_id as name %}
+        {% page_attribute "page_title" request.current_page as page_title %}
+        {% if request.current_page.level > 1 %}
+             {{ page_title }} | {{ name }}
+        {% else %}
+            {{ page_title }}
+        {% endif %}
+        {% endblock title %}
+    </title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="Olivier Larchevêque">
 
-    <!-- Le styles -->
-    <link href="{{ STATIC_URL }}css/bootstrap.min.css" rel="stylesheet">
     <style>
       body {
-        padding-top: 60px; /* 60px to make the container go all the way to the bottom of the topbar */
+        padding-top: 80px; 
       }
-    </style>
-    <link href="{{ STATIC_URL }}css/bootstrap-responsive.min.css" rel="stylesheet">
+  </style>
+
+    <!-- Le styles -->
+    {% block boostrap_css %}
+        <link href="{{ STATIC_URL }}css/bootstrap.min.css" rel="stylesheet">
+        <link href="{{ STATIC_URL }}css/bootstrap-responsive.min.css"
+              rel="stylesheet">
+    {% endblock boostrap_css %}
+
+    <link href="{{ STATIC_URL }}css/print.css" rel="stylesheet" media="print">
 
     <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
     <!--[if lt IE 9]>
       <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
 
-    <!-- This file store project specific CSS -->
-    <link href="{{ STATIC_URL }}css/project.css" rel="stylesheet">
-
-    
     {% render_block "css" %}
 
     <!-- Use this to quickly test CSS changes in a template, 
@@ -35,7 +47,17 @@
 
   <body>
 
-    <div class="container">
+    {% block menu %} 
+    <div class="navbar navbar-fixed-top hidden-print">
+        <div class="navbar-inner">
+            <ul class="nav">
+                {% show_menu 0 100 100 100 "menu.html" %}
+            </ul>
+        </div>
+    </div>
+    {% endblock menu %}
+
+     <div class="container">
 
       {% block content %}
         <p>Use this document as a way to quick start any new project.</p>

@@ -1,0 +1,19 @@
+.title h3 {
+    border-bottom: 3px solid #EEEEEE;
+}
+
+.dates {
+    margin-top: 14px;
+}
+
+#overview h1 {
+    line-height: 28px;
+}
+
+.who {
+    color: #333333;
+    float: left;
+    padding: 17px 15px;
+    text-decoration: none;
+    text-shadow: 0 1px 0 #F6F6F6;
+}
