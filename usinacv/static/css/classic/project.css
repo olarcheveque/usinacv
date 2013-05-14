@@ -17,3 +17,7 @@
     text-decoration: none;
     text-shadow: 0 1px 0 #F6F6F6;
 }
+
+.nav .current img {
+    text-decoration: underline;
+}
