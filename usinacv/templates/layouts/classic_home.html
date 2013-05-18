@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+{% load i18n cms_tags menu_tags %}
+
+{% block boostrap_css %}
+    <link href="{{ STATIC_URL }}css/classic/bootstrap.min.css"
+          rel="stylesheet">
+    <link href="{{ STATIC_URL }}css/classic/project.css"
+          rel="stylesheet">
+{% endblock boostrap_css %}
+
+
+{% block menu %}
+    <div class="navbar navbar-fixed-top hidden-print">
+        <div class="navbar-inner">
+            <ul class="nav">
+                {% include "menu/brand.html" %}
+            </ul>
+            {% language_chooser "menu/language_chooser.html" %}
+        </div>
+    </div>
+{% endblock menu %}
+
+{% block content %}
+    {% cms_toolbar %}
+    <div class="column-center">
+        <div class="row">
+            <div class="span8">
+                {% placeholder "column-center" %}
+            </div>
+            <div class="span4">
+                <h3>{% trans "Resumes" %}</h3>
+                <ul class="nav">
+                  {% show_menu 0 0 0 0 "menu.html" %}
+                </ul>
+            </div>
+        </div>
+    </div>
+{% endblock content %}

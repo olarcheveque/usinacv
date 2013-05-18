@@ -22,7 +22,7 @@
       body {
         padding-top: 80px; 
       }
-  </style>
+    </style>
 
     <!-- Le styles -->
     {% block boostrap_css %}
@@ -51,7 +51,8 @@
     <div class="navbar navbar-fixed-top hidden-print">
         <div class="navbar-inner">
             <ul class="nav">
-                {% show_menu 0 100 100 100 "menu.html" %}
+                {% include "menu/brand.html" %}
+                {% show_menu 0 100 0 100 "menu.html" %}
             </ul>
             {% language_chooser "menu/language_chooser.html" %}
         </div>

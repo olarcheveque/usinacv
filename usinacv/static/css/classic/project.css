@@ -18,6 +18,10 @@
     text-shadow: 0 1px 0 #F6F6F6;
 }
 
+.navbar-inner:after {
+    margin-bottom: -1px;
+}
+
 .nav .current img {
     text-decoration: underline;
 }

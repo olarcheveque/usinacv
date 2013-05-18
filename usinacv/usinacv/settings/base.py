@@ -202,6 +202,7 @@ THIRD_PARTY_APPS = (
     'mptt',
     'menus',
     'sekizai',
+    'cms.plugins.text',
 
     'django_countries',
 )
@@ -262,6 +263,7 @@ LANGUAGES = [
 
 CMS_TEMPLATES = (
     ('layouts/classic.html', 'Classic'),
+    ('layouts/classic_home.html', 'Classic Home'),
     )
 ######### END DJANGO CMS
 
