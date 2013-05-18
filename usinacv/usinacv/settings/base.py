@@ -256,6 +256,10 @@ WSGI_APPLICATION = 'wsgi.application'
 ########## END WSGI CONFIGURATION
 
 ######### DJANGO CMS
+CMS_PERMISSION = True
+
+CMS_PUBLIC_FOR = "all"
+
 LANGUAGES = [
     ('fr', 'French'),
     ('en', 'English'),
