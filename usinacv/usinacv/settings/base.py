@@ -18,6 +18,9 @@ SITE_NAME = basename(DJANGO_ROOT)
 # Add our project to our pythonpath, this way we don't need to type our project
 # name in our dotted import paths:
 path.append(DJANGO_ROOT)
+
+# Add SITE_ROOT to lookup application (wsgi)
+path.append(SITE_ROOT)
 ########## END PATH CONFIGURATION
 
 
