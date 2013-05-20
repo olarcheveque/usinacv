@@ -16,3 +16,6 @@ build
 
 # Logs:
 *.log
+
+# Secret confs
+secret

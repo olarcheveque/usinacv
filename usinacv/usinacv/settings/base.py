@@ -4,6 +4,10 @@
 from os.path import abspath, basename, dirname, join, normpath
 from sys import path
 
+try:
+    from secret import SECRET_KEY
+except:
+    pass
 
 ########## PATH CONFIGURATION
 # Absolute filesystem path to the Django project directory:
