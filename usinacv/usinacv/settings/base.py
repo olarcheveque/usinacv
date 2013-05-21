@@ -4,11 +4,6 @@
 from os.path import abspath, basename, dirname, join, normpath
 from sys import path
 
-try:
-    from secret import SECRET_KEY
-except:
-    pass
-
 ########## PATH CONFIGURATION
 # Absolute filesystem path to the Django project directory:
 DJANGO_ROOT = dirname(dirname(abspath(__file__)))
@@ -115,8 +110,10 @@ STATICFILES_FINDERS = (
 
 ########## SECRET CONFIGURATION
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#secret-key
-# Note: This key only used for development and testing.
-SECRET_KEY = r"l%nko#)jt@r+4(_w#t@4)5yl3adwy_qxh7m!2^95t6l5fi7it-"
+try:
+    from secret import SECRET_KEY
+except:
+    pass
 ########## END SECRET CONFIGURATION
 
 
@@ -248,7 +245,6 @@ LOGGING = {
         'console':{
             'level': 'DEBUG',
             'class': 'logging.StreamHandler',
-            'formatter': 'simple'
         },
     },
     'loggers': {
