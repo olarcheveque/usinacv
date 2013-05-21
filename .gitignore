@@ -18,4 +18,4 @@ build
 *.log
 
 # Secret confs
-secret
+secret.py
