@@ -7,6 +7,8 @@ from base import *
 
 INSTALLED_APPS += ('gunicorn',)
 
+ALLOWED_HOSTS = ('127.0.0.1', )
+
 ########## EMAIL CONFIGURATION
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#email-backend
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
