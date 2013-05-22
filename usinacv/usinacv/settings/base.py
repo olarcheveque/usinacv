@@ -207,7 +207,6 @@ THIRD_PARTY_APPS = (
     'mptt',
     'menus',
     'sekizai',
-    'cms.plugins.text',
 
     'django_countries',
 )
