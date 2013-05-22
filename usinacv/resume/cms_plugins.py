@@ -11,6 +11,7 @@ from .models import JobPlugin as JobPluginModel
 from .models import ProjectPlugin as ProjectPluginModel
 from .models import EducationPlugin as EducationPluginModel
 from .models import TitlePlugin as TitlePluginModel
+from .models import FreeTextPlugin as FreeTextPluginModel
 
 
 class IdentityPlugin(CMSPluginBase):
@@ -101,3 +102,18 @@ class TitlePlugin(CMSPluginBase):
         return context
 
 plugin_pool.register_plugin(TitlePlugin)
+
+
+class FreeTextPlugin(CMSPluginBase):
+    """
+    Django CMS plugin for free text model.
+    """
+    model = FreeTextPluginModel
+    name = _("Free Text Plugin")
+    render_template = "resume/freetext_plugin.html"
+
+    def render(self, context, instance, placeholder):
+        context.update({'instance': instance})
+        return context
+
+plugin_pool.register_plugin(FreeTextPlugin)

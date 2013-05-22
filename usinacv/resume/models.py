@@ -156,3 +156,12 @@ class TitlePlugin(CMSPlugin):
     title = models.CharField(
             verbose_name=_('Title'),
             max_length=100)
+
+
+class FreeTextPlugin(CMSPlugin):
+    """
+    Plugin to store free text with mardown markup.
+    """
+    text = models.TextField(
+            verbose_name=_('Text'),
+            help_text=_('use Markdown syntax'))
