@@ -81,7 +81,8 @@ class JobPlugin(CMSPlugin):
 
     date_end = models.DateField(
             verbose_name=_('End Date'),
-            null=True)
+            null=True,
+            blank=True)
 
     job_title = models.CharField(
             verbose_name=_('Job Title'),
@@ -133,7 +134,8 @@ class EducationPlugin(CMSPlugin):
 
     date_end = models.DateField(
             verbose_name=_('End Date'),
-            null=True)
+            null=True,
+            blank=True)
 
     diploma_title = models.CharField(
             verbose_name=_('Diploma'),
