@@ -1,4 +1,4 @@
-{% load markup %}
+{% load i18n markup %}
 
 <div class="span9">
 <h4>
@@ -13,8 +13,11 @@
 <div class="span3 dates">
     <p class="pull-right">
         {{ date_start|date:"Y" }}
+            - 
         {% if date_end %}
-            - {{ date_end|date:"Y" }}
+            {{ date_end|date:"Y" }}
+        {% else %}
+            {% trans "ongoing" %}
         {% endif %}
     </p>
 </div>
