@@ -2,5 +2,5 @@ markdown
 gunicorn
 Django
 south
-django-cms
+git+git://github.com/divio/django-cms.git@develop#egg=django-cms
 django-countries

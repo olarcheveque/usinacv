@@ -12,10 +12,10 @@
 
 <div class="span3 dates">
     <p class="pull-right">
-        {{ date_start|date:"Y" }}
+        {{ date_start|date:"m/Y" }}
             - 
         {% if date_end %}
-            {{ date_end|date:"Y" }}
+            {{ date_end|date:"m/Y" }}
         {% else %}
             {% trans "ongoing" %}
         {% endif %}

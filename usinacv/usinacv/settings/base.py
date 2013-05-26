@@ -158,7 +158,6 @@ TEMPLATE_DIRS = (
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#middleware-classes
 MIDDLEWARE_CLASSES = (
     # Default Django middleware.
-    'django.middleware.common.CommonMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
@@ -205,6 +204,8 @@ THIRD_PARTY_APPS = (
 
     # Django CMS
     'cms',
+    'cms.stacks',
+    'menus',
     'mptt',
     'menus',
     'sekizai',
