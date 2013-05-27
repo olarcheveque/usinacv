@@ -27,7 +27,6 @@ path.append(DJANGO_ROOT)
 path.append(SITE_ROOT)
 ########## END PATH CONFIGURATION
 
-
 ########## DEBUG CONFIGURATION
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#debug
 DEBUG = False
@@ -244,7 +243,7 @@ LOGGING = {
             'filters': ['require_debug_false'],
             'class': 'django.utils.log.AdminEmailHandler'
         },
-        'console':{
+        'console': {
             'level': 'DEBUG',
             'class': 'logging.StreamHandler',
         },
@@ -280,4 +279,3 @@ CMS_TEMPLATES = (
     ('layouts/classic_home.html', 'Classic Home'),
     )
 ######### END DJANGO CMS
-
