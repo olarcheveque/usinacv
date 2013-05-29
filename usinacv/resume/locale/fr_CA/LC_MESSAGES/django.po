@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-05-26 16:54-0700\n"
+"POT-Creation-Date: 2013-05-28 18:23-0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -74,7 +74,7 @@ msgstr "Titre de l'emploi"
 msgid "Description"
 msgstr "Description"
 
-#: models.py:46 models.py:119 models.py:146 models.py:169
+#: models.py:46 models.py:119 models.py:144 models.py:172
 msgid "use Markdown syntax"
 msgstr "utilisez la syntaxe Markdown"
 
@@ -90,11 +90,11 @@ msgstr ""
 msgid "Github"
 msgstr ""
 
-#: models.py:80 models.py:133
+#: models.py:80 models.py:131
 msgid "Start Date"
 msgstr "Date de début"
 
-#: models.py:83 models.py:136
+#: models.py:83 models.py:134
 msgid "End Date"
 msgstr "Date de fin"
 
@@ -114,23 +114,19 @@ msgstr "Site Web de la companie"
 msgid "Title"
 msgstr "Titre"
 
-#: models.py:122
-msgid "Job"
-msgstr "Emploi"
-
-#: models.py:141
+#: models.py:139
 msgid "Diploma"
 msgstr "Diplôme"
 
-#: models.py:145
+#: models.py:143
 msgid "Diploma Description"
 msgstr "Description du diplôme"
 
-#: models.py:150
+#: models.py:148
 msgid "University"
 msgstr "Université"
 
-#: models.py:168
+#: models.py:171
 msgid "Text"
 msgstr "Texte"
 
@@ -141,3 +137,6 @@ msgstr "en cours"
 #: templates/resume/identity_plugin.html:18
 msgid "Contact"
 msgstr "Contact"
+
+#~ msgid "Job"
+#~ msgstr "Emploi"
