@@ -118,10 +118,8 @@ class ProjectPlugin(CMSPlugin):
             verbose_name=_('Description'),
             help_text=_('use Markdown syntax'))
 
-    job = models.ForeignKey('JobPlugin',
-            verbose_name=_('Job'),
-            related_name='project_plugins',
-            null=True)
+    def __unicode__(self):
+        return self.title
 
 
 class EducationPlugin(CMSPlugin):
@@ -150,6 +148,8 @@ class EducationPlugin(CMSPlugin):
             verbose_name=_('University'),
             max_length=255)
 
+    def __unicode__(self):
+        return self.diploma_title
 
 class TitlePlugin(CMSPlugin):
     """
@@ -159,6 +159,9 @@ class TitlePlugin(CMSPlugin):
             verbose_name=_('Title'),
             max_length=100)
 
+    def __unicode__(self):
+        return self.title
+
 
 class FreeTextPlugin(CMSPlugin):
     """
@@ -167,3 +170,6 @@ class FreeTextPlugin(CMSPlugin):
     text = models.TextField(
             verbose_name=_('Text'),
             help_text=_('use Markdown syntax'))
+
+    def __unicode__(self):
+        return self.text
