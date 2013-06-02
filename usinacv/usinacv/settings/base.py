@@ -273,6 +273,7 @@ LANGUAGES = [
     ('fr', 'French'),
     ('en', 'English'),
     ]
+CMS_LANGUAGES = LANGUAGES
 
 CMS_TEMPLATES = (
     ('layouts/classic.html', 'Classic'),
