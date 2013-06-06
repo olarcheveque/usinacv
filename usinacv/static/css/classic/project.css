@@ -38,3 +38,8 @@
     color: #333333;
     text-decoration: none;
 }
+
+.title .anchor {
+    position: absolute;
+    top: -60px;
+}
