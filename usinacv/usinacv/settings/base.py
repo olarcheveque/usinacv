@@ -273,7 +273,14 @@ LANGUAGES = [
     ('fr', 'French'),
     ('en', 'English'),
     ]
-CMS_LANGUAGES = LANGUAGES
+CMS_LANGUAGES = {
+    'default': {
+            'fallbacks': ['fr', 'en', ],
+            'redirect_on_fallback':True,
+            'public': True,
+            'hide_untranslated': False,
+        }
+}
 
 CMS_TEMPLATES = (
     ('layouts/classic.html', 'Classic'),
