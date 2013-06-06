@@ -25,3 +25,11 @@
 .nav .current img {
     text-decoration: underline;
 }
+
+.job h4 {
+    margin-bottom: 0px;
+}
+
+.job a {
+    color: #333333;
+}

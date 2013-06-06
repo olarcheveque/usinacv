@@ -2,12 +2,19 @@
 
 <div class="span9">
 <h4>
-    {{ title }}
+    {% if url %}
+    <a href="{{ url }}" target="_blank">{{ title }}</a>
+    {% else %}
+        {{ title }}
+    {% endif %}
     <small>{{ subtitle }}</small>
 </h4>
+
 {% if description %}
   <p class="description">{{ description|markdown }}</p>
 {% endif %}
+
+
 </div>
 
 <div class="span3 dates">

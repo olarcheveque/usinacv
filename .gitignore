@@ -17,5 +17,7 @@ build
 # Logs:
 *.log
 
+assets
+
 # Secret confs
 secret.py
