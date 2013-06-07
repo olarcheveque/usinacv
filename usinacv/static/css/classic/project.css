@@ -43,3 +43,12 @@
     position: absolute;
     top: -60px;
 }
+
+.event {
+    width: 80%;
+}
+
+.range {
+    width: 20%;
+    padding-top: 13px;
+}

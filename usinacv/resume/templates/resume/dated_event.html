@@ -1,30 +1,30 @@
 {% load i18n markup %}
 
-<div class="span9">
-<h4>
-    {% if url %}
-    <a href="{{ url }}" target="_blank">{{ title }}</a>
-    {% else %}
-        {{ title }}
-    {% endif %}
-    <small>{{ subtitle }}</small>
-</h4>
-
-{% if description %}
-  <p class="description">{{ description|markdown }}</p>
-{% endif %}
-
-
-</div>
-
-<div class="span3 dates">
-    <p class="pull-right">
-        {{ date_start|date:"m/Y" }}
-            - 
-        {% if date_end %}
-            {{ date_end|date:"m/Y" }}
+<div class="event pull-left">
+    <h4>
+        {% if url %}
+        <a href="{{ url }}" target="_blank">{{ title }}</a>
         {% else %}
-            {% trans "ongoing" %}
+            {{ title }}
         {% endif %}
-    </p>
+        <small>{{ subtitle }}</small>
+    </h4>
+    
+    {% if description %}
+      <p class="description">{{ description|markdown }}</p>
+    {% endif %}
 </div>
+
+<div class="range pull-left">
+    <span class=" pull-right">
+    {{ date_start|date:"m/Y" }}
+        - 
+    {% if date_end %}
+        {{ date_end|date:"m/Y" }}
+    {% else %}
+        {% trans "ongoing" %}
+        {% endif %}
+    </span>
+</div>
+
+<div class="clearfix"></div>
