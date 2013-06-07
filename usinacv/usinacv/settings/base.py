@@ -285,5 +285,6 @@ CMS_LANGUAGES = {
 CMS_TEMPLATES = (
     ('layouts/classic.html', 'Classic'),
     ('layouts/classic_home.html', 'Classic Home'),
+    ('layouts/classic_2columns.html', 'Classic 2 columns'),
     )
 ######### END DJANGO CMS

@@ -45,7 +45,7 @@
     {% block extra_css %}{% endblock extra_css %}
   </head>
 
-  <body>
+  <body {% block body_attrs %}{% endblock body_attrs %}>
 
     {% block menu %} 
     <div class="navbar navbar-fixed-top hidden-print">
