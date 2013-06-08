@@ -34,16 +34,16 @@
     color: #333333;
 }
 
-.title {
-    position: relative;
-}
-
 .title a {
     color: #333333;
     text-decoration: none;
 }
 
-.title .anchor {
+.anchor-container {
+    position: relative;
+}
+
+.anchor {
     position: absolute;
     top: -60px;
 }

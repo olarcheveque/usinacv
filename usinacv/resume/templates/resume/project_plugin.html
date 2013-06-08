@@ -1,6 +1,7 @@
 {% load markup %}
 
-<div class="project">
+<div class="project anchor-container">
+    <a class="anchor" name="{{ instance.title|slugify }}"></a>
     <h4>{{ instance.title }}</h4>
     {% if instance.description %}
       <p class="description">{{ instance.description|markdown }}</p>
