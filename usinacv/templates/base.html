@@ -43,6 +43,17 @@
     <!-- Use this to quickly test CSS changes in a template, 
         then move to project.css -->
     {% block extra_css %}{% endblock extra_css %}
+
+    <!-- Google analytics -->
+    <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+        ga('create', 'UA-41643938-1', 'usinasite.com');
+        ga('send', 'pageview');
+    </script>
+
   </head>
 
   <body {% block body_attrs %}{% endblock body_attrs %}>
@@ -75,15 +86,6 @@
 
     <!-- place project specific Javascript in this file -->
     <script src="{{ STATIC_URL }}js/project.js"></script>
-
-    <script>
-        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-        ga('create', 'UA-41643938-1', 'usinasite.com');
-        ga('send', 'pageview');
-    </script>
 
     {% render_block "js" %}
     {% block extra_js %}{% endblock extra_js %}
