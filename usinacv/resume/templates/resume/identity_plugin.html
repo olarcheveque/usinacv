@@ -1,7 +1,8 @@
 {% load i18n markup %}
 
 <header id="overview" class="identity jumbotron subhead">
-  <div class="row">
+<div class="row">
+
     <div class="span8">
         <h1>{{ instance.first_name }} {{ instance.last_name }}</h1>
         {% if instance.job_title %}
@@ -15,17 +16,16 @@
 
     <div class="span4">
       <div class="well">
-      <div><strong>{% trans "Contact" %}</strong></div>
-      {% if instance.email %} {{ instance.email }} <br />{% endif %}
-      <img class="flag"
-             src="{{ instance.country.flag }}"
-             alt="{{ instance.country.code }}" />
-      {{ instance.city }}<br />
-      {% if instance.phone %} {{ instance.phone }} <br />{% endif %}
+          <div><strong>{% trans "Contact" %}</strong></div>
+          {% if instance.email %} {{ instance.email }} <br />{% endif %}
+          <img class="flag"
+                 src="{{ instance.country.flag }}"
+                 alt="{{ instance.country.code }}" />
+          {{ instance.city }}<br />
+          {% if instance.phone %} {{ instance.phone }} <br />{% endif %}
+      </div>
     </div>
-    </div>
-  </div>
 
-  </div>
+</div>
 </header>
 
